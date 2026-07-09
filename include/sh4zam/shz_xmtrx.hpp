@@ -735,6 +735,11 @@ struct xmtrx {
         shz_xmtrx_set_translation(x, y, z);
     }
 
+    //! C++ wrapper around shz_xmtrx_set_translation().
+    SHZ_FORCE_INLINE void set_translation(vec3 v) noexcept {
+        set_translation(v.x, v.y, v.z);
+    }
+
 //! @}
 
 /*! \name  Getters
@@ -769,9 +774,19 @@ struct xmtrx {
         shz_xmtrx_add_diagonal(x, y, z, w);
     }
 
+    //! C++ wrapper around shz_xmtrx_add_diagonal().
+    SHZ_FORCE_INLINE static void add_diagonal(vec4 v) noexcept {
+        add_diagonal(v.x, v.y, v.z, v.w);
+    }
+
     //! C++ wrapper around shz_xmtrx_add_symmetric_skew().
     SHZ_FORCE_INLINE static void add_symmetric_skew(float x, float y, float z) noexcept {
         shz_xmtrx_add_symmetric_skew(x, y, z);
+    }
+    
+    //! C++ wrapper around shz_xmtrx_add_symmetric_skew().
+    SHZ_FORCE_INLINE static void add_symmetric_skew(vec3 v) noexcept {
+        add_symmetric_skew(v.x, v.y, v.z);
     }
 
     //! C++ wrapper around shz_xmtrx_transpose().
